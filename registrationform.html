@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #registrationContainer,
+    #completionContainer {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      display: block;
+    }
+
+    #completionContainer {
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    h1 {
+      color: #4caf50;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="registrationContainer">
+    <form id="registrationForm">
+        <h3>Registration form</h3>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <label for="password">confirm password</label>
+      <input type="password" id="password" name="password" required>
+      <button type="button" onclick="completeRegistration()">Register</button>
+    </form>
+  </div>
+
+  <div id="completionContainer">
+    <h1>Registration Complete!</h1>
+    <p id="completionMessage"></p>
+  </div>
+
+  <script>
+    function completeRegistration() {
+      var username = document.getElementById('username').value;
+      var completionMessage = document.getElementById('completionMessage');
+      completionMessage.innerHTML = 'Thank you, ' + username + ', for registering. You can now log in with your credentials.';
+      document.getElementById('registrationContainer').style.display = 'none';
+      document.getElementById('completionContainer').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
